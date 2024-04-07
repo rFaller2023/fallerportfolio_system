@@ -2,15 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add Company Form - Laravel 10 CRUD</title>
+    <title>Edit Educational Information - Laravel 10 CRUD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .container {
+            background-color: #ffffff; /* White container background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Blue button background */
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Red button background */
+            border-color: #dc3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            border-color: #c82333;
+        }
+
+        .alert {
+            margin-top: 10px;
+        }
+
+        .alert-danger {
+            color: #721c24; /* Red alert text color */
+            background-color: #f8d7da; /* Red alert background color */
+            border-color: #f5c6cb; /* Red alert border color */
+        }
+    </style>
 </head>
 <body>
 
 <div class="container mt-4">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2>Educational</h2>
+            <h2>Edit Educational Information Form</h2>
         </div>
     </div>
 
@@ -27,49 +78,50 @@
     <form action="{{ route('educationals.update', $educational->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="grade_level"> Grade Level:</label>
-                    <input type="text" name="grade_level" id="grade_level" value="{{$educational->grade_level}}" class="form-control" placeholder="Grade_Level">
+                    <label for="grade_level">Grade Level:</label>
+                    <input type="text" name="grade_level" id="grade_level" value="{{$educational->grade_level}}" class="form-control" placeholder="Grade Level">
                     @error('grade_level')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
 
-        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="school_name">School Name:</label>
-                    <input type="text" name="school_name" id="school_name" value="{{$educational->school_name}}" class="form-control" placeholder="School_Name">
+                    <input type="text" name="school_name" id="school_name" value="{{$educational->school_name}}" class="form-control" placeholder="School Name">
                     @error('school_name')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="school_year">School Year:</label>
-                    <input type="text" name="school_year" id="school_year" value="{{$educational->school_year}}" class="form-control" placeholder="School_Year">
+                    <input type="text" name="school_year" id="school_year" value="{{$educational->school_year}}" class="form-control" placeholder="School Year">
                     @error('school_year')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <input type="text" name="description" id="description" value="{{$educational->description}}" class="form-control" placeholder="Description">
-                @error('description')
-                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                @enderror
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="text" name="description" id="description" value="{{$educational->description}}" class="form-control" placeholder="Description">
+                    @error('description')
+                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-md-12 text-right">

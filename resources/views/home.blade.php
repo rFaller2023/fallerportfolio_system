@@ -9,7 +9,7 @@
     <title>Porfolio</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="dashboard/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="dashboard/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{asset('dashboard/assets/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -120,6 +120,7 @@
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
+             
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('users.index')}}" aria-expanded="false" aria-controls="ui-basic">
@@ -179,6 +180,7 @@
         </nav>
         <!-- partial -->
         <div class="main-panel">
+          
           <div class="content-wrapper">
             <div class="page-header">
               <h3 class="page-title">
@@ -202,7 +204,7 @@
            
                     
             
-                            
+             @yield('table')               
                           
           
           <!-- partial -->

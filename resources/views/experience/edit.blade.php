@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <title>Add Company Form - Laravel 10 CRUD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+        }
+
+        .container {
+            background-color: #ffffff; /* White container background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary,
+        .btn-primary:hover {
+            background-color: #007bff; /* Blue button background */
+            border-color: #007bff;
+        }
+
+        .btn-danger,
+        .btn-danger:hover {
+            background-color: #dc3545; /* Red button background */
+            border-color: #dc3545;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .alert {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container mt-4">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2>Experiences</h2>
+            <h2>Edit Experiences Form</h2>
         </div>
     </div>
 
@@ -38,7 +75,6 @@
                 </div>
             </div>
 
-        <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="year">Year:</label>
@@ -48,7 +84,10 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-md-6">
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label for="details">Details:</label>
                     <input type="text" name="details" id="details" value="{{$experience->details}}" class="form-control" placeholder="Details">
@@ -59,17 +98,17 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="image">Image:</label>
-                <input type="file" name="image" id="image" value="{{$experience->image}}" class="form-control" placeholder="Image">
-                @error('image')
-                <div class="alert alert-danger mt-1">{{ $message }}</div>
-                @enderror
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="image">Image:</label>
+                    <input type="file" name="image" id="image" class="form-control" placeholder="Image">
+                    @error('image')
+                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
         </div>
-
-
 
         <div class="row">
             <div class="col-md-12 text-right">
