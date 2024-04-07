@@ -1,3 +1,4 @@
+@extends('about.layout')
 @extends('home')
 @section('table')
 <!DOCTYPE html>
@@ -7,42 +8,7 @@
     <title>About</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .container {
-            background-color: #ffffff; /* White container background */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
-            padding: 30px;
-            margin-top: 50px;
-        }
 
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .btn-create {
-            margin-bottom: 20px;
-        }
-
-        th {
-            background-color: #a34e4e;
-            color: #000000;
-        }
-
-        .btn-edit {
-            background-color: #4573dc;
-            border-color: #4573dc;
-        }
-
-        .btn-delete {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-
-        .btn-back {
-            margin-top: 20px;
-        }
-    </style>
 </head>
 <body>
 
@@ -64,7 +30,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+        <div class = "table-responsive">
     <table class="table table-bordered">
         <tr>
             <th>#</th>
@@ -96,6 +62,7 @@
         </tr>
         @endforeach
     </table>
+</div>
     <div class="pull-right">
         <a class="btn btn-primary btn-back" href="{{ route('home') }}" enctype="multipart/form-data"> Back</a>
     </div>

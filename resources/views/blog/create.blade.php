@@ -1,60 +1,11 @@
+@extends('blog.layout')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add Blog Form - Laravel 10 CRUD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa; /* Light gray background */
-        }
 
-        .container {
-            background-color: #ffffff; /* White container background */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff; /* Blue button background */
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            border-color: #0056b3;
-        }
-
-        .btn-danger {
-            background-color: #dc3545; /* Red button background */
-            border-color: #dc3545;
-        }
-
-        .btn-danger:hover {
-            background-color: #c82333; /* Darker red on hover */
-            border-color: #c82333;
-        }
-
-        .alert {
-            margin-top: 10px;
-        }
-
-        .alert-danger {
-            color: #721c24; /* Red alert text color */
-            background-color: #f8d7da; /* Red alert background color */
-            border-color: #f5c6cb; /* Red alert border color */
-        }
-    </style>
 </head>
 <body>
 

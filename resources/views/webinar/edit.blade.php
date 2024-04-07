@@ -1,61 +1,11 @@
+@extends('webinar.layout')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add Company Form - Laravel 10 CRUD</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa; /* Light grey background */
-            padding-top: 50px;
-        }
-
-        .container {
-            background-color: #fff; /* White container background */
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 30px;
-            margin-top: 20px;
-        }
-
-        h2 {
-            color: #007bff; /* Blue heading color */
-            margin-bottom: 30px;
-        }
-
-        .form-group label {
-            color: #495057; /* Label color */
-            font-weight: bold; /* Bold label text */
-        }
-
-        .form-control {
-            border-color: #ced4da; /* Form input border color */
-        }
-
-        .btn-primary {
-            background-color: #007bff; /* Blue button background */
-            border-color: #007bff; /* Blue button border */
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            border-color: #0056b3; /* Darker blue border on hover */
-        }
-
-        .btn-danger {
-            background-color: #dc3545; /* Red button background */
-            border-color: #dc3545; /* Red button border */
-        }
-
-        .btn-danger:hover {
-            background-color: #c82333; /* Darker red on hover */
-            border-color: #c82333; /* Darker red border on hover */
-        }
-
-        .btn-back {
-            margin-right: 10px; /* Add space between buttons */
-        }
-    </style>
+   
 </head>
 <body>
 

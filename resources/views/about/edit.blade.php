@@ -1,36 +1,11 @@
+@extends('about.layout')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Edit Company Form - Laravel 10 CRUD Tutorial</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .container {
-            background-color: #ffffff; /* White container background */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
-            padding: 30px;
-            margin-top: 50px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .alert {
-            margin-top: 10px;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-    </style>
+ 
 </head>
 <body>
 

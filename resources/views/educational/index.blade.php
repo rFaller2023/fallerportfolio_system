@@ -1,3 +1,4 @@
+@extends('educational.layout')
 @extends('home')
 @section('table')
 <!DOCTYPE html>
@@ -6,53 +7,7 @@
     <meta charset="UTF-8">
     <title>Educational Attainment Table</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa; /* Light gray background */
-        }
-
-        .container {
-            background-color: #ffffff; /* White container background */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Shadow effect */
-            padding: 30px;
-            margin-top: 50px;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .btn-success {
-            background-color: #28a745; /* Green button background */
-            border-color: #28a745;
-        }
-
-        .btn-primary,
-        .btn-primary:hover {
-            background-color: #007bff; /* Blue button background */
-            border-color: #007bff;
-        }
-
-        .btn-danger,
-        .btn-danger:hover {
-            background-color: #dc3545; /* Red button background */
-            border-color: #dc3545;
-        }
-
-        .table {
-            background-color: #ffffff; /* White table background */
-        }
-
-        .table th,
-        .table td {
-            vertical-align: middle;
-        }
-        th {
-            background-color: #a34e4e;
-            color: #000000;
-        }
-    </style>
+    
 </head>
 <body>
 
@@ -73,7 +28,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+    <div class = "table-responsive">
     <table class="table table-bordered">
         <tr>
             <th>#</th>
@@ -101,6 +56,7 @@
         </tr>
         @endforeach
     </table>
+    </div>
     <div class="pull-right">
         <a class="btn btn-primary" href="{{ route('home') }}">Back</a>
     </div>
