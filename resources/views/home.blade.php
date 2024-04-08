@@ -64,11 +64,11 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="dashboard/assets/images/faces/rose.jpg" alt="image">
+                  <img src="dashboard/assets/images/faces/default.png" alt="image">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">Rosemarie Faller</p>
+                  <p class="mb-1 text-black"></p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
@@ -104,17 +104,18 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="dashboard/assets/images/faces/rose.jpg" alt="profile">
+                  <img src="dashboard/assets/images/faces/default.png" alt="profile">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">Rosemarie Faller</span>
-                  <span class="text-secondary text-small">Graphic Designer</span>
+                  <span class="font-weight-bold mb-2">{{Auth::user()->user_name}}</span>
+                  <span class="text-secondary text-small">{{Auth::user()->role}}</span>
                 </div>
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
               </a>
             </li>
+            @if(Auth::User()->role != 'spectator')
             <li class="nav-item">
               <a class="nav-link" href="index.html">
                 <span class="menu-title">Dashboard</span>
@@ -128,7 +129,7 @@
                 {{-- <i class="menu-arrow"></i> --}}
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              
+              @endif
             <li class="nav-item">
               <a class="nav-link" href="{{route('abouts.index')}}">
                 <span class="menu-title">About</span>

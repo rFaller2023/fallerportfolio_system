@@ -20,7 +20,7 @@ class AboutSeeder extends Seeder
         'age' => '17',
         'phone_number' => '09106019843',
         'email' => 'rosemariefaller48@gmail.com',
-        'gender' => 'male',
+        'gender' => 'female',
         
             ]
             ]);

@@ -114,9 +114,8 @@
 						Welcome
 					</span>
 					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-                       
-					</span>
+                        <i class="zmdi zmdi-account"></i>
+                    </span>
                     <div>
                         @error('email')
                         <p class="text-danger">{{ $message}}</p>
@@ -149,7 +148,7 @@
 							Don't have an account?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" href="{{ route('register') }}">
 							Sign Up
 						</a>
 					</div>

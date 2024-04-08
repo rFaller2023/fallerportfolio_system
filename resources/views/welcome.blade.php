@@ -124,9 +124,9 @@
                         <div class="col-lg-6">
                           <div class="skills-content ps-lg-4">
                             <div class="progress">
-                              <span class="skill">{{$skill->skill_name}} <i class="val">{{$skill->percentage}}%</i></span>
+                              <span class="skill">{{$skill->skill_name}} <i class="value">{{$skill->percentage}}</i></span>
                               <div class="progress-bar-wrap">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="{{$skill->percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar" role="progressbar" style="width: {{$skill->percentage}}" aria-valuenow="{{$skill->percentage}}" aria-valuemin="0" aria-valuemax="500"></div>
                               </div>
                             </div>
                           </div>
@@ -146,31 +146,30 @@
     <!-- ======= My Educational Attainmaent Section ======= -->
     <section id="educational" class="educational">
       <div class="container">
-
-        <div class="section-title">
-          <span> Educational Attainment</span>
-          <h2>Educational Attainment</h2>
-          <p>Here are some information about my studies</p>
-        </div>
-
-        <div class="row">
-    <div class="col-lg-6">
-
-        <h3 class="educational-title">SUMMARY</h3>
-
-        @foreach($educationals as $educational)
-        <div class="educational-item">
-            <h4>{{$educational->grade_level}}</h4>
-            <p><em>{{$educational->school_name}}</em></p>
-            <h5>{{$educational->school_year}}</h5>
-            <p>{{$educational->description}}</p>
-        </div>
-
-    </div>
-</div>
-@endforeach
-              
-    </section><!-- End My Resume Section -->
+          <div class="section-title">
+              <span>Educational Attainment</span>
+              <h2>Educational Attainment</h2>
+              <p>Here is some information about my studies</p>
+          </div>
+          <div class="row">
+              <div class="col-lg-6">
+                  <h3 class="educational-title">SUMMARY</h3>
+                  @foreach($educationals as $educational)
+                  <div class="educational-item">
+                      <h4>{{$educational->grade_level}}</h4>
+                      <p><em>{{$educational->school_name}}</em></p>
+                      <h5>{{$educational->school_year}}</h5>
+                      <p>{{$educational->description}}</p>
+                  </div>
+                  @endforeach
+              </div>
+              <!-- End col-lg-6 -->
+          </div>
+          <!-- End row -->
+      </div>
+      <!-- End container -->
+  </section>
+  <!-- End My Resume Section -->
 
     <!-- ======= My Experience Section ======= -->
     <section id="experiences" class="experiences">
@@ -187,7 +186,7 @@
                       <div class="experience-title">{{$experience->title}}</div>
                       <div class="experience-year">{{$experience->year}}</div>
                       <div class="experience-details">{{$experience->details}}</div>
-                      <img class="experience-image" src="{{ 'storage/'. $experience->image }}" alt="Experience Image" style="width: 100%; height: auto;">
+                      <img class="experience-image" src="{{ 'storage/'. $experience->image }}" alt="Experience Image" style="width: 50%; height: 50%;">
                   </div>
               @endforeach
           </div>
@@ -236,22 +235,22 @@
               <h2>Blog</h2>
               {{-- <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p> --}}
           </div>
-          
           <div class="blog-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px;">
               @foreach($blogs->chunk(2) as $chunk)
-                  <div class="blog-row">
-                      @foreach($chunk as $blog)
-                          <div class="blog" style="border: 1px solid #ccc; padding: 10px;">
-                              <div class="blog-title">{{$blog->title}}</div>
-                              <img class="blog-image" src="{{'storage/'. $blog->image}}" alt="Blog Image" style="width: 100%; height: auto; max-height: 300px;">
-                              <div class="blog-content">{{$blog->content}}</div>
-                          </div>
-                      @endforeach
+              <div class="blog-row">
+                  @foreach($chunk as $blog)
+                  <div class="blog" style="border: 1px solid #ccc; padding: 10px;">
+                      <div class="blog-title">{{$blog->title}}</div>
+                      <img class="blog-image" src="{{'storage/'. $blog->image}}" alt="Blog Image" style="width: 100%; height: auto; max-height: 300px; object-fit: cover;">
+                      <div class="blog-content">{{$blog->content}}</div>
                   </div>
+                  @endforeach
+              </div>
               @endforeach
           </div>
       </div>
   </section>
+  
   
   
   </section>
@@ -278,10 +277,10 @@
                   <h3>Social Profiles</h3>
                   <div class="social-links">
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.facebook.com/rosemarie.faller.52" class="facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/rosemarie-faller-96b35a259/" class="linkedin"><i class="bi bi-linkedin"></i></a>
                   </div>
                 </div>
               </div>
@@ -355,7 +354,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+         <a href="https://bootstrapmade.com/"></a>
       </div>
     </div>
   </footer><!-- End Footer -->

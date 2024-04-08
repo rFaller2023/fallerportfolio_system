@@ -131,8 +131,8 @@
 
     .btn-back,
     .btn-back:hover {
-        background-color: #6c757d; 
-        border-color: #6c757d;
+        background-color: #ff0000; 
+        border-color: #ff0000;
     }
 
     .alert {

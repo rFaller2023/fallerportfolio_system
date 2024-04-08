@@ -37,8 +37,9 @@
         <tr>
             <th>#</th>
             <th>Role</th>
-            <th>User Name</th>
+            <th>Username</th>
             <th>Email</th>
+            {{-- <th>Password</th> --}}
             <th width="280px">Action</th>
         </tr>
         
@@ -48,6 +49,7 @@
             <td>{{$users->role}}</td>
             <td>{{$users->user_name}}</td>
             <td>{{$users->email}}</td>
+            
             <td>
                 <form action="{{route('users.destroy', $users->id)}}" method="POST">
                     <a class="btn btn-primary" href="{{route('users.edit', $users->id)}}">Edit</a>

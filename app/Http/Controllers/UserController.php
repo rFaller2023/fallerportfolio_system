@@ -24,7 +24,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('User.create');
     }
 
@@ -51,8 +53,11 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('User.edit', compact('user'));
+
     }   
 
   

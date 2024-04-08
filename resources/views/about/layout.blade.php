@@ -95,6 +95,7 @@
 
         h2 {
             margin-bottom: 20px;
+            color: #000000;
         }
 
         .btn-create {

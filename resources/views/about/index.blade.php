@@ -20,7 +20,9 @@
                 <h2>About Table</h2>
             </div>
             <div class="pull-right mb-2">
-                <a class="btn btn-success btn-create" href="{{ route('abouts.create') }}"> Create About Yourself</a>
+                @if(Auth::User()->role == 'admin')
+               
+            @endif
             </div>
         </div>
     </div>
@@ -53,11 +55,13 @@
             <td>{{ $about->gender }}</td>
             <td>
                 <form action="{{ route('abouts.destroy',$about->id) }}" method="Post">
+                    @if(Auth::User()->role == 'admin')
                     <a class="btn btn-primary btn-edit" href="{{ route('abouts.edit',$about->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-delete">Delete</button>
                 </form>
+                @endif
             </td>
         </tr>
         @endforeach

@@ -18,7 +18,9 @@
                 <h2>Educational Attainment Table</h2>
             </div>
             <div class="pull-right mb-2">
+                @if(Auth::User()->role == 'admin')
                 <a class="btn btn-success" href="{{ route('educationals.create') }}"> Create Educational Attainment</a>
+           @endif
             </div>
         </div>
     </div>
@@ -47,11 +49,13 @@
             <td>{{ $educational->description }}</td>
             <td>
                 <form action="{{ route('educationals.destroy',$educational->id) }}" method="Post">
+                    @if(Auth::User()->role == 'admin')
                     <a class="btn btn-primary" href="{{ route('educationals.edit',$educational->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                @endif
             </td>
         </tr>
         @endforeach

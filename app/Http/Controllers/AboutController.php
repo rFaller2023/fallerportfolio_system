@@ -23,7 +23,9 @@ class aboutController extends Controller
      */
     public function create()
     {
-        //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('about.create');
     }
 
@@ -51,7 +53,9 @@ class aboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        if(auth()->user()->role =="spectator"){
+            return abort(403, 'Denied Access');
+        }
         return view('about.edit', compact('about'));
     }
 

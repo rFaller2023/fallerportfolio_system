@@ -36,7 +36,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="{{ $about->name }}" class="form-control" placeholder="Name">
                     @error('name')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
@@ -45,7 +45,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input type="text" name="address" id="address" class="form-control" placeholder="Address">
+                    <input type="text" name="address" value="{{ $about->address }}" class="form-control" placeholder="Address">
                     @error('address')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
@@ -57,7 +57,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="age">Age:</label>
-                    <input type="text" name="degree" id="age" class="form-control" placeholder="Age">
+                    <input type="text" name="degree" value="{{ $about->age }}" class="form-control" placeholder="Age">
                     @error('age')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
@@ -66,7 +66,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="phone_number">Phone Number:</label>
-                    <input type="text" name="phone_numbere" id="phone_number" class="form-control" placeholder="Phone Number">
+                    <input type="text" name="phone_numbere" value="{{ $about->phone_number }}" class="form-control" placeholder="Phone Number">
                     @error('city')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror

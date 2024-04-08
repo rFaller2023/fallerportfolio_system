@@ -18,7 +18,9 @@
                 <h2>Blog Table</h2>
             </div>
             <div class="pull-right mb-2">
+                @if(Auth::User()->role == 'admin')
                 <a class="btn btn-success" href="{{ route('blogs.create') }}"> Create Blog</a>
+                @endif
             </div>
         </div>
     </div>
@@ -51,11 +53,13 @@
             <td>{{ $blogs->content }}</td>
             <td>
                 <form action="{{ route('blogs.destroy',$blogs->id) }}" method="POST">
+                    @if(Auth::User()->role == 'admin')
                     <a class="btn btn-primary" href="{{ route('blogs.edit',$blogs->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                @endif
             </td>
         </tr>
         @endforeach

@@ -18,9 +18,11 @@
             <div class="pull-left">
                 <h2>Skills Table</h2>
             </div>
+            @if(Auth::User()->role == 'admin')
             <div class="pull-right mb-2">
                 <a class="btn btn-success" href="{{ route('skills.create') }}"> Create Skills</a>
             </div>
+            @endif
         </div>
     </div>
    
@@ -46,7 +48,7 @@
 
             <td>
                 <form action="{{ route('skills.destroy',$skill->id) }}" method="Post">
-    
+    @if(Auth::User()->role == 'admin')
                     <a class="btn btn-primary" href="{{ route('skills.edit',$skill->id) }}">Edit</a>
    
                     @csrf
@@ -54,6 +56,7 @@
       
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                @endif
             </td>
         </tr>
         @endforeach
