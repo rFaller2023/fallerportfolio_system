@@ -37,7 +37,7 @@ class UserController extends Controller
     {
        
         User::create($request->all());
-        return view('user.index');
+        return view('User.index');
     }
 
     /**
