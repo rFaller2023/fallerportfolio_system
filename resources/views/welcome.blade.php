@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Laura Bootstrap Template - Index</title>
+  <title>My Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -43,14 +43,19 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a class="nav-link scrollto" href="#about">About</a></li>
-        <li><a class="nav-link scrollto" href="#skills">Skills</a></li>
-        <li><a class="nav-link scrollto" href="#educational">Educational</a></li>
-        {{-- <li><a class="nav-link scrollto " href="#experience">Experience</a></li> --}}
-        <li><a class="nav-link scrollto" href="#experiences"> Experience</a></li>
-        <li><a class="nav-link scrollto " href="#webinar">Webinar</a></li>
-        <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
+       
         
+        <li class="dropdown"><a href="#"><span>Resume</span> <i class="bi bi-chevron-right"></i></a>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#educational">Educational</a></li>
+            <li><a href="#experiences">Experience</a></li>
+            <li><a href="#webinar">Webinar</a></li>
+            <li><a href="#blog">Blog</a></li>
+          </ul>
+        </li>
+
         {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> --}}
           
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -278,7 +283,7 @@
                   <div class="social-links">
                     <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                     <a href="https://www.facebook.com/rosemarie.faller.52" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/_maliieee20/" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
                     <a href="https://www.linkedin.com/in/rosemarie-faller-96b35a259/" class="linkedin"><i class="bi bi-linkedin"></i></a>
                   </div>
@@ -286,16 +291,19 @@
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4">
-                  <i class="bx bx-envelope"></i>
-                  <h3>Email Me</h3>
-                  <p>contact@example.com</p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rfaller989@gmail.com">
+                        <i class="bx bx-envelope"></i>
+                    </a>
+                    <h3>Email Me</h3>
+                    <p>rfaller989@gmail.com</p>
                 </div>
-              </div>
+            </div>
+            
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-phone-call"></i>
                   <h3>Call Me</h3>
-                  <p>+1 5589 55488 55</p>
+                  <p>09950097282</p>
                 </div>
               </div>
             </div>
@@ -303,28 +311,36 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
+            <form action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+              @csrf
+                 <div id="msgSubmit" class="h3 text-center hidden"></div>
+                 <div class="row">
+                     <div class="col-md-6 col-sm-12">
+                     <label for="first_name">First Name</label>
+                      <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                     </div>
+                     <div class="col-md-6 col-sm-12">
+                     <label for="last_name">Last Name</label>
+
+                         <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                     </div>
+                     <div class="col-sm-12">
+                     <label for="email">Email</label>
+                         <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                     </div>
+                     <div class="col-sm-12">
+                     <label for="message">Message</label>
+
+                     <textarea name="message" class="form-control contact-message" id="message" rows="10" placeholder="Your Message" required></textarea>
+                     </div>
+                     <!-- Subject Button -->
+                     <div class="btn-form col-sm-12">
+                     <div class="text-center">
+
+                         <button type="submit" class="btn btn-fill btn-primary" id="form-submit">Send Message</button>
+                     </div>
+                 </div>
+             </form>
           </div>
 
         </div>
@@ -338,13 +354,13 @@
   <footer id="footer">
     <div class="container">
       <h3>Rosemarie Faller</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <p></p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.facebook.com/rosemarie.faller.52" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/rosemarie-faller-96b35a259/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       {{-- <div class="copyright">
         &copy; Copyright <strong><span>Laura</span></strong>. All Rights Reserved

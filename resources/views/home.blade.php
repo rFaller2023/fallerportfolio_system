@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Porfolio</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="dashboard/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{asset('dashboard/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('dashboard/assets/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
@@ -16,9 +16,9 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="dashboard/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('dashboard/assets/css/style.css')}}">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="dashboard/assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('dashboard/assets/images/favicon.ico')}}" />
   </head>
   <body>
     <div class="container-scroller">
@@ -27,7 +27,7 @@
           <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
             <div class="ps-lg-1">
               <div class="d-flex align-items-center justify-content-between">
-                <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
+                {{-- <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p> --}}
                 <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
               </div>
             </div>
@@ -43,7 +43,7 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="dashboard/assets/images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="index.html">ADMIN</a>
           {{-- <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a> --}}
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
@@ -64,7 +64,7 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="dashboard/assets/images/faces/default.png" alt="image">
+                  <img src="{{asset('dashboard/assets/images/faces/default.png" alt="image')}}">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
@@ -104,7 +104,7 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="dashboard/assets/images/faces/default.png" alt="profile">
+                  <img src="{{asset('dashboard/assets/images/faces/default.png" alt="profile')}}">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
@@ -166,6 +166,12 @@
                 <i class="mdi mdi-table-large menu-icon"></i>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contact.index')}}">
+                <span class="menu-title">Contact</span>
+                <i class="mdi mdi-table-large menu-icon"></i>
+              </a>
+            </li>
             
             </li>
             <li class="nav-item sidebar-actions">
@@ -216,20 +222,21 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="dashboard/assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="dashboard/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="dashboard/assets/js/jquery.cookie.js" type="text/javascript"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="dashboard/assets/js/off-canvas.js"></script>
-    <script src="dashboard/assets/js/hoverable-collapse.js"></script>
-    <script src="dashboard/assets/js/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="dashboard/assets/js/dashboard.js"></script>
-    <script src="dashboard/assets/js/todolist.js"></script>
+<script src="{{ asset('dashboard/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="{{ asset('dashboard/assets/vendors/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/jquery.cookie.js') }}" type="text/javascript"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="{{ asset('dashboard/assets/js/off-canvas.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/hoverable-collapse.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/misc.js') }}"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="{{ asset('dashboard/assets/js/dashboard.js') }}"></script>
+<script src="{{ asset('dashboard/assets/js/todolist.js') }}"></script>
+
     <!-- End custom js for this page -->
   </body>
 </html>

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\SkillController;
@@ -37,6 +39,7 @@ Route::resource('educationals', EducationalController::class);
 Route::resource('experiences', ExperienceController::class);
 Route::resource('webinars', WebinarController::class);
 Route::resource('blogs', BlogController ::class);
+Route::resource('contact', ContactController ::class);
 
 Route::middleware('role:admin')->group(function (){
     Route::resource('users', UserController::class);
