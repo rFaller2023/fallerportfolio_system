@@ -23,9 +23,12 @@
   </div>
        
     </hr>
-  
+    <div class="pull-right">
+        <a class="btn btn-primary" href="{{ route('contact.index') }}">Back</a>
+    </div>
   </div>
 </div>
+
 </body>
 </html>
 @endsection
