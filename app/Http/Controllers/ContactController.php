@@ -24,7 +24,9 @@ class ContactController extends Controller
      */
     public function create()
     {
-        // return view('welcome');
+        if(auth()->user()->role == 'spectator'){
+            return abort(403, 'Denied Access');
+        }
     }
 
     /**
@@ -58,7 +60,9 @@ class ContactController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        if(auth()->user()->role == 'spectator'){
+            return abort(403, 'Denied Access');
+        }
     }
 
     /**

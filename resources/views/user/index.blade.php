@@ -43,8 +43,11 @@
             <th width="280px">Action</th>
         </tr>
         
-        @foreach($user as $users)
+        
         <tr>
+            @foreach($user as $users)
+            @if($users->role == 'spectator')
+            {{-- <td>{{++$i}}</td> --}}
             <td>{{$users->id}}</td>
             <td>{{$users->role}}</td>
             <td>{{$users->user_name}}</td>
@@ -59,6 +62,7 @@
                 </form>
             </td>
         </tr>
+        @endif
         @endforeach
     </table>
     </div>

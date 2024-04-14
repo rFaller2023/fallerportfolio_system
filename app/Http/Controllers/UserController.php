@@ -16,7 +16,7 @@ class UserController extends Controller
         //
        $user =  User::get();
 
-        return view('User.index', compact('user'));
+        return view('user.index', compact('user'));
     }
 
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
         if(auth()->user()->role =="spectator"){
             return abort(403, 'Denied Access');
         }
-        return view('User.create');
+        return view('user.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class UserController extends Controller
     {
        
         User::create($request->all());
-        return view('User.index');
+        return view('user.index');
     }
 
     /**
@@ -56,7 +56,7 @@ class UserController extends Controller
         if(auth()->user()->role =="spectator"){
             return abort(403, 'Denied Access');
         }
-        return view('User.edit', compact('user'));
+        return view('user.edit', compact('user'));
 
     }   
 
